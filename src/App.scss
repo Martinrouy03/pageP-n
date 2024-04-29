@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: black;
   color: #dbbc5e;
@@ -156,5 +159,27 @@ main {
         color: #dbbc5e;
       }
     }
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .left-panel {
+    flex: 1;
+  }
+  .right-panel {
+    width: 245px;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+  h1 {
+    font-size: 30px;
   }
 }
