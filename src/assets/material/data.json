@@ -1,0 +1,230 @@
+{
+  "French": {
+    "edition": 2022,
+    "prayers": [
+      {
+        "title": "Dharani de Vajravidarana",
+        "pageStart": 7,
+        "pageEnd": 15,
+        "index": 1
+      },
+      {
+        "title": "Dharani de la Victorieuse",
+        "pageStart": 17,
+        "pageEnd": 21,
+        "index": 2
+      },
+      {
+        "title": "Soutra de la souvenance des trois joyaux",
+        "pageStart": 23,
+        "pageEnd": 28,
+        "index": 3
+      },
+      {
+        "title": "Refuge et Bodhicitta",
+        "pageStart": 29,
+        "pageEnd": 32,
+        "index": 4
+      },
+      {
+        "title": "Visualisation du lieu",
+        "pageStart": 33,
+        "pageEnd": 33,
+        "index": 5
+      },
+      {
+        "title": "Visualisation du palais incommensurable",
+        "pageStart": 35,
+        "pageEnd": 37,
+        "index": 6
+      },
+      {
+        "title": "Visualisation des offrandes",
+        "pageStart": 39,
+        "pageEnd": 40,
+        "index": 7
+      },
+      { "title": "Invitation", "pageStart": 41, "pageEnd": 44, "index": 8 },
+      {
+        "title": "Offrande d'ablution",
+        "pageStart": 45,
+        "pageEnd": 48,
+        "index": 9
+      },
+      {
+        "title": "Branche de l'hommage",
+        "pageStart": 49,
+        "pageEnd": 60,
+        "index": 10
+      },
+      {
+        "title": "Branche de l'offrande",
+        "pageStart": 61,
+        "pageEnd": 70,
+        "index": 11
+      },
+      {
+        "title": "Branche de la confession",
+        "pageStart": 73,
+        "pageEnd": 87,
+        "index": 12
+      },
+      {
+        "title": "Branche de la réjouissance",
+        "pageStart": 89,
+        "pageEnd": 90,
+        "index": 13
+      },
+      {
+        "title": "Branche de l'exhortation à tourner la roue du Dharma",
+        "pageStart": 91,
+        "pageEnd": 91,
+        "index": 14
+      },
+      {
+        "title": "Branche de la requête de ne pas entrer en nirvana",
+        "pageStart": 93,
+        "pageEnd": 93,
+        "index": 15
+      },
+      {
+        "title": "Branche de la dédicace",
+        "pageStart": 95,
+        "pageEnd": 99,
+        "index": 16
+      },
+      {
+        "title": "Voeu de bodhisattva",
+        "pageStart": 101,
+        "pageEnd": 103,
+        "index": 17
+      },
+      {
+        "title": "Louange générale au Sugata",
+        "pageStart": 105,
+        "pageEnd": 109,
+        "index": 18
+      },
+      {
+        "title": "Résumé versifié de la centaine de vies passées du Bouddha",
+        "pageStart": 111,
+        "pageEnd": 114,
+        "index": 19
+      },
+      {
+        "title": "Louange aux douze hauts faits du Boudha",
+        "pageStart": 115,
+        "pageEnd": 118,
+        "index": 20
+      },
+      {
+        "title": "Louange à Manjushri 'Gang Lo Ma'",
+        "pageStart": 119,
+        "pageEnd": 126,
+        "index": 21
+      },
+      {
+        "title": "Louange implorante à Avalokiteshvara",
+        "pageStart": 127,
+        "pageEnd": 129,
+        "index": 22
+      },
+      {
+        "title": "Huit quatrains de louanges à Tara",
+        "pageStart": 131,
+        "pageEnd": 133,
+        "index": 23
+      },
+      {
+        "title": "Louange aux vénérables Anciens",
+        "pageStart": 135,
+        "pageEnd": 145,
+        "index": 24
+      },
+      {
+        "title": "Louange aux six Ornements de l'Inde et aux deux Suprêmes",
+        "pageStart": 147,
+        "pageEnd": 152,
+        "index": 25
+      },
+      {
+        "title": "Louange à la lignée des seize Karmapas",
+        "pageStart": 153,
+        "pageEnd": 158,
+        "index": 26
+      },
+      {
+        "title": "Choral des épithètes de Manjushri",
+        "pageStart": 159,
+        "pageEnd": 206,
+        "index": 27
+      },
+      {
+        "title": "Soutra de la prajnaparamita",
+        "pageStart": 207,
+        "pageEnd": 213,
+        "index": 28
+      },
+      {
+        "title": "Le soutra de la sagesse du moment de la mort",
+        "pageStart": 215,
+        "pageEnd": 218,
+        "index": 29
+      },
+      {
+        "title": "Prière d'aspiration de Samantabhadra",
+        "pageStart": 219,
+        "pageEnd": 236,
+        "index": 30
+      },
+      {
+        "title": "Prière d'aspiration de Maitreya",
+        "pageStart": 237,
+        "pageEnd": 244,
+        "index": 31
+      },
+      {
+        "title": "Prière d'aspiration du Bodhicaryavatara",
+        "pageStart": 245,
+        "pageEnd": 260,
+        "index": 32
+      },
+      {
+        "title": "Prière d'aspiration de Sukhavati commençant par 'Shé Dja'",
+        "pageStart": 261,
+        "pageEnd": 270,
+        "index": 33
+      },
+      {
+        "title": "Les aspirations du mahamudra de la réalité définitive",
+        "pageStart": 271,
+        "pageEnd": 278,
+        "index": 34
+      },
+      {
+        "title": "Prière d'aspiration d'Akshobya",
+        "pageStart": 279,
+        "pageEnd": 283,
+        "index": 35
+      },
+      {
+        "title": "Prière d'aspiration du bardo composée par le vénérable Keuntchok Yenlak",
+        "pageStart": 285,
+        "pageEnd": 303,
+        "index": 36
+      },
+      {
+        "title": "Longue prière d'aspiration de Sukhavati composée par Tchakmé Rinpoché",
+        "pageStart": 305,
+        "pageEnd": 335,
+        "index": 37
+      },
+      {
+        "title": "Souhaits et prière d'aspiration commençant par 'Keuntchok Sangyé'",
+        "pageStart": 337,
+        "pageEnd": 343,
+        "index": 38
+      }
+    ]
+  }
+}
