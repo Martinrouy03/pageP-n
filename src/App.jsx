@@ -4,6 +4,10 @@ import "./fonts.css";
 import Header from "./assets/components/Header";
 import SearchBar from "./assets/components/Searchbar";
 import data from "./assets/material/data.json";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faRepeat } from "@fortawesome/free-solid-svg-icons";
+library.add(faRepeat);
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // console.log(data.French.prayers);
 function App() {
@@ -21,6 +25,8 @@ function App() {
       msg = "📣 Local Announcements 📣";
     } else if (buttonIndex === 3) {
       msg = "... Resuming in 10 minutes ...";
+    } else if (buttonIndex === 4) {
+      msg = "📜 Additional prayer (not in the book) 📜";
     }
     if (message && button === buttonIndex) {
       setMessage("");
@@ -50,6 +56,18 @@ function App() {
         <div className="control-panel">
           <div className="left-panel">
             <h2>Control Panel</h2>
+            <button
+              onClick={() => {
+                setMessage("");
+                const SamantabhadraPrayer = data.French.prayers.find((p) =>
+                  p.title.includes("Samantabhadra")
+                );
+                setPrayer(SamantabhadraPrayer);
+                setPage(SamantabhadraPrayer.pageStart);
+              }}
+            >
+              Samantabhadra Prayer
+            </button>
             <SearchBar
               prayer={prayer}
               setPrayer={setPrayer}
@@ -116,6 +134,16 @@ function App() {
                 +
               </button>
             </div>
+            <div className="repeat">
+              <FontAwesomeIcon icon="fa-solid fa-repeat" />
+              <button
+                onClick={() => {
+                  setPage(prayer.pageStart);
+                }}
+              >
+                Repeat
+              </button>
+            </div>
             <div className="buttons">
               <h3>Quick displays:</h3>
               <button onClick={() => myButtonFunc(1)}>Tea Break</button>
@@ -123,6 +151,7 @@ function App() {
                 Local Announcements
               </button>
               <button onClick={() => myButtonFunc(3)}>Resuming in 10min</button>
+              <button onClick={() => myButtonFunc(4)}>Additional prayer</button>
             </div>
           </div>
         </div>

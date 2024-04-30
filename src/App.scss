@@ -94,6 +94,20 @@ main {
   border-radius: 20px;
   .left-panel {
     align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    > button {
+      border-radius: 10px;
+      padding: 2px 10px;
+      border: 2px solid #f2bc19;
+      background-image: linear-gradient(to bottom, #dbbf6c, #f6eaea);
+      width: fit-content;
+      align-self: center;
+    }
+    > button:hover {
+      background-image: linear-gradient(to bottom, #f7bb07, #f7f5f1);
+    }
     h2 {
       text-align: center;
       margin-bottom: 30px;
@@ -124,6 +138,20 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    .repeat {
+      border-radius: 10px;
+      padding: 2px 5px;
+      border: 2px solid #f2bc19;
+      background-image: linear-gradient(to bottom, #dbbf6c, #f6eaea);
+      button {
+        background-color: unset;
+        border: none;
+        font-size: 20px;
+      }
+    }
+    .repeat:hover {
+      background-image: linear-gradient(to bottom, #f7bb07, #f7f5f1);
+    }
     .page-control {
       display: flex;
       gap: 10px;
@@ -132,7 +160,6 @@ main {
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        padding: 0px;
         font-size: 24px;
         color: #dbbc5e;
         border: 3px solid #dbbc5e;
