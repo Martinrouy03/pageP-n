@@ -2,25 +2,26 @@ import { useState } from "react";
 import data from "../../assets/material/data.json";
 import "../../App.scss";
 
-const SearchBar = ({ setPrayer, setPage, setMessage }) => {
+const SearchBar = ({ setPrayer, setPage, setMessage, setButton }) => {
   const [suggestions, setSuggestions] = useState("");
   const handleChange = (event) => {
     let sugg = [];
     setTxt(event.target.value);
 
-    data.French.prayers.map((prayer) => {
-      if (prayer.title.toLowerCase().search(txt) > -1) {
+    data.map((prayer) => {
+      if (prayer.fr.title.toLowerCase().search(txt) > -1) {
         sugg.push(
           <p
             onClick={() => {
               setPrayer(prayer);
-              setPage(prayer.pageStart);
-              setTxt(prayer.title);
+              setPage(prayer.fr.pageStart);
+              setTxt(prayer.fr.title);
               setSuggestions("");
               setMessage("");
+              setButton(0);
             }}
           >
-            {prayer.title}
+            {prayer.fr.title}
           </p>
         );
       }
@@ -34,7 +35,9 @@ const SearchBar = ({ setPrayer, setPage, setMessage }) => {
   return (
     <div className="search">
       <input
-        onClick={() => setTxt("")}
+        onClick={() => {
+          setTxt("");
+        }}
         type="text"
         placeholder="Search prayer:"
         onChange={(event) => handleChange(event)}

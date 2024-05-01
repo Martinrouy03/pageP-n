@@ -9,14 +9,16 @@ import { faRepeat } from "@fortawesome/free-solid-svg-icons";
 library.add(faRepeat);
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// console.log(data.French.prayers);
+// console.log(data);
 function App() {
-  const indexLast = data.French.prayers.length;
-  const pageMax = data.French.prayers[indexLast - 1].pageEnd;
+  const welcomeMessage =
+    "Welcome all! || French edition: 2022 || English edition:20XX";
+  const indexLast = data.length;
+  const pageMax = data[indexLast - 1].fr.pageEnd;
   const [page, setPage] = useState(7);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(welcomeMessage);
   const [button, setButton] = useState(0);
-  const [prayer, setPrayer] = useState(data.French.prayers[0]);
+  const [prayer, setPrayer] = useState(data[0]);
   const myButtonFunc = (buttonIndex) => {
     let msg = "";
     if (buttonIndex === 1) {
@@ -47,7 +49,7 @@ function App() {
           </div>
         ) : (
           <div className="display-container display-prayer">
-            <p>{prayer.title}</p>
+            <p>{prayer.fr.title}</p>
             <div>
               <span>p.{page}</span>
             </div>
@@ -58,12 +60,31 @@ function App() {
             <h2>Control Panel</h2>
             <button
               onClick={() => {
+                setMessage(welcomeMessage);
+                setButton(0);
+              }}
+            >
+              Welcome
+            </button>
+            <button
+              onClick={() => {
                 setMessage("");
-                const SamantabhadraPrayer = data.French.prayers.find((p) =>
-                  p.title.includes("Samantabhadra")
+                setButton(0);
+                setPrayer(data[0]);
+                setPage(7);
+              }}
+            >
+              START
+            </button>
+            <button
+              onClick={() => {
+                setMessage("");
+                setButton(0);
+                const SamantabhadraPrayer = data.find((p) =>
+                  p.fr.title.includes("Samantabhadra")
                 );
                 setPrayer(SamantabhadraPrayer);
-                setPage(SamantabhadraPrayer.pageStart);
+                setPage(SamantabhadraPrayer.fr.pageStart);
               }}
             >
               Samantabhadra Prayer
@@ -73,6 +94,7 @@ function App() {
               setPrayer={setPrayer}
               setPage={setPage}
               setMessage={setMessage}
+              setButton={setButton}
             />
           </div>
           <div className="right-panel">
@@ -80,15 +102,16 @@ function App() {
               <button
                 onClick={() => {
                   setMessage("");
+                  setButton(0);
                   if (page > 1) {
                     setPage(Number(page) - 1);
                   }
-                  if (page === prayer.pageStart && prayer.index > 1) {
-                    const previousPrayer = data.French.prayers.find(
+                  if (page === prayer.fr.pageStart && prayer.index > 1) {
+                    const previousPrayer = data.find(
                       (p) => p.index === prayer.index - 1
                     );
                     setPrayer(previousPrayer);
-                    setPage(previousPrayer.pageEnd);
+                    setPage(previousPrayer.fr.pageEnd);
                   }
                 }}
               >
@@ -100,34 +123,38 @@ function App() {
                 placeholder="Go to page:"
                 onChange={(event) => {
                   setMessage("");
+                  setButton(0);
+
                   if (event.target.value < pageMax) {
                     setPage(event.target.value);
-                    const pp = data.French.prayers.find(
-                      (p) => p.pageEnd > event.target.value
+                    const pp = data.find(
+                      (p) => p.fr.pageEnd > event.target.value
                     );
                     if (pp) {
                       setPrayer(pp);
                     }
                   } else {
                     setPage(pageMax);
-                    setPrayer(data.French.prayers[indexLast - 1]);
+                    setPrayer(data[indexLast - 1]);
                   }
                 }}
               />
               <button
                 onClick={() => {
                   setMessage("");
+                  setButton(0);
+
                   if (Number(page) < pageMax) {
                     setPage(Number(page) + 1);
                   } else {
                     setPage(pageMax);
                   }
-                  if (page === prayer.pageEnd && prayer.index < 38) {
-                    const nextPrayer = data.French.prayers.find(
+                  if (page === prayer.fr.pageEnd && prayer.index < 38) {
+                    const nextPrayer = data.find(
                       (p) => p.index === prayer.index + 1
                     );
                     setPrayer(nextPrayer);
-                    setPage(nextPrayer.pageStart);
+                    setPage(nextPrayer.fr.pageStart);
                   }
                 }}
               >
@@ -138,7 +165,7 @@ function App() {
               <FontAwesomeIcon icon="fa-solid fa-repeat" />
               <button
                 onClick={() => {
-                  setPage(prayer.pageStart);
+                  setPage(prayer.fr.pageStart);
                 }}
               >
                 Repeat
@@ -146,12 +173,42 @@ function App() {
             </div>
             <div className="buttons">
               <h3>Quick displays:</h3>
-              <button onClick={() => myButtonFunc(1)}>Tea Break</button>
-              <button onClick={() => myButtonFunc(2)}>
+              <button
+                style={{
+                  backgroundColor: button === 1 ? "darkgray" : "lightgray",
+                  color: button === 1 ? "white" : "black",
+                }}
+                onClick={() => myButtonFunc(1)}
+              >
+                Tea Break
+              </button>
+              <button
+                style={{
+                  backgroundColor: button === 2 ? "darkgray" : "lightgray",
+                  color: button === 2 ? "white" : "black",
+                }}
+                onClick={() => myButtonFunc(2)}
+              >
                 Local Announcements
               </button>
-              <button onClick={() => myButtonFunc(3)}>Resuming in 10min</button>
-              <button onClick={() => myButtonFunc(4)}>Additional prayer</button>
+              <button
+                style={{
+                  backgroundColor: button === 3 ? "darkgray" : "lightgray",
+                  color: button === 3 ? "white" : "black",
+                }}
+                onClick={() => myButtonFunc(3)}
+              >
+                Resuming in 10min
+              </button>
+              <button
+                style={{
+                  backgroundColor: button === 4 ? "darkgray" : "lightgray",
+                  color: button === 4 ? "white" : "black",
+                }}
+                onClick={() => myButtonFunc(4)}
+              >
+                Additional prayer
+              </button>
             </div>
           </div>
         </div>
