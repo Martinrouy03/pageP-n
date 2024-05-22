@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import "./fonts.css";
 import Header from "./assets/components/Header";
@@ -13,12 +13,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function App() {
   const welcomeMessage =
     "Welcome all! || French edition: 2022 || English edition:20XX";
+
   const indexLast = data.length;
   const pageMax = data[indexLast - 1].fr.pageEnd;
   const [page, setPage] = useState(7);
   const [message, setMessage] = useState(welcomeMessage);
   const [button, setButton] = useState(0);
   const [prayer, setPrayer] = useState(data[0]);
+  const [storage, setStorage] = useState(
+    JSON.parse(window.localStorage.getItem("options"))
+  ); // ,
+  const [newOption, setNewOption] = useState("");
+  const [optionsTxt, setOptionsTxt] = useState([]);
+  const myOptionsFunc = () => {
+    const options = [];
+    if (storage) {
+      storage.map((option_txt, index) => {
+        return options.push(
+          <option key={index} value={option_txt}>
+            {option_txt}
+          </option>
+        );
+      });
+    }
+    setOptionsTxt(options);
+  };
   const myButtonFunc = (buttonIndex) => {
     let msg = "";
     if (buttonIndex === 1) {
@@ -38,10 +57,12 @@ function App() {
       setButton(buttonIndex);
     }
   };
+  useEffect(() => {
+    myOptionsFunc();
+  }, [storage]);
   return (
     <>
       <Header />
-
       <main className="container">
         {message ? (
           <div className="display-container">
@@ -58,37 +79,87 @@ function App() {
         <div className="control-panel">
           <div className="left-panel">
             <h2>Control Panel</h2>
-            <button
-              onClick={() => {
-                setMessage(welcomeMessage);
-                setButton(0);
+            <div id="buttons">
+              <button
+                onClick={() => {
+                  setMessage(welcomeMessage);
+                  setButton(0);
+                }}
+              >
+                Welcome
+              </button>
+              <button
+                onClick={() => {
+                  setMessage("");
+                  setButton(0);
+                  setPrayer(data[0]);
+                  setPage(7);
+                }}
+              >
+                START
+              </button>
+              <button
+                onClick={() => {
+                  setMessage("");
+                  setButton(0);
+                  const SamantabhadraPrayer = data.find((p) =>
+                    p.fr.title.includes("Samantabhadra")
+                  );
+                  setPrayer(SamantabhadraPrayer);
+                  setPage(SamantabhadraPrayer.fr.pageStart);
+                }}
+              >
+                Samantabhadra Prayer
+              </button>
+            </div>
+
+            <form
+              action=""
+              onSubmit={(event) => {
+                event.preventDefault();
+                if (storage) {
+                  const newStorage = [...storage];
+                  newStorage.push(newOption);
+                  setStorage(newStorage);
+                  window.localStorage.setItem(
+                    "options",
+                    JSON.stringify(newStorage)
+                  );
+                } else {
+                  const initOption = [newOption];
+                  window.localStorage.setItem(
+                    "options",
+                    JSON.stringify(initOption)
+                  );
+                  setStorage(initOption);
+                }
               }}
             >
-              Welcome
-            </button>
-            <button
-              onClick={() => {
-                setMessage("");
-                setButton(0);
-                setPrayer(data[0]);
-                setPage(7);
-              }}
-            >
-              START
-            </button>
-            <button
-              onClick={() => {
-                setMessage("");
-                setButton(0);
-                const SamantabhadraPrayer = data.find((p) =>
-                  p.fr.title.includes("Samantabhadra")
-                );
-                setPrayer(SamantabhadraPrayer);
-                setPage(SamantabhadraPrayer.fr.pageStart);
-              }}
-            >
-              Samantabhadra Prayer
-            </button>
+              <input
+                type="text"
+                placeholder="Add a text to display"
+                value={newOption}
+                onChange={(event) => setNewOption(event.target.value)}
+                onClick={() => {
+                  setNewOption("");
+                }}
+              />
+              <button>Add text</button>
+            </form>
+            <div className="additional">
+              <h4>Select a text to display:</h4>
+              <select
+                // style={{ height: "25px" }}
+                onChange={(event) => {
+                  setButton(0);
+                  setMessage(event.target.value);
+                }}
+                name=""
+                id=""
+              >
+                {optionsTxt}
+              </select>
+            </div>
             <SearchBar
               prayer={prayer}
               setPrayer={setPrayer}
