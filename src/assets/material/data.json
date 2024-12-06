@@ -6,9 +6,9 @@
       "pageEnd": 15
     },
     "en": {
-      "title": "Dharani de Vajravidarana",
-      "pageStart": 7,
-      "pageEnd": 15
+      "title": "Vajra Vidarana",
+      "pageStart": 1,
+      "pageEnd": 8
     },
     "index": 1
   },
@@ -18,6 +18,11 @@
       "pageStart": 17,
       "pageEnd": 21
     },
+    "en": {
+      "title": "The Dharani of Ushnishavijaya",
+      "pageStart": 9,
+      "pageEnd": 12
+    },
     "index": 2
   },
   {
@@ -25,6 +30,11 @@
       "title": "Soutra de la souvenance des trois joyaux",
       "pageStart": 23,
       "pageEnd": 28
+    },
+    "en": {
+      "title": "Recollection of the Three Jewels",
+      "pageStart": 13,
+      "pageEnd": 18
     },
     "index": 3
   },
@@ -34,6 +44,11 @@
       "pageStart": 29,
       "pageEnd": 32
     },
+    "en": {
+      "title": "Taking Refuge and Generating Bodhicitta",
+      "pageStart": 19,
+      "pageEnd": 21
+    },
     "index": 4
   },
   {
@@ -41,6 +56,11 @@
       "title": "Visualisation du lieu",
       "pageStart": 33,
       "pageEnd": 33
+    },
+    "en": {
+      "title": "Blessing the Earth Branch",
+      "pageStart": 22,
+      "pageEnd": 22
     },
     "index": 5
   },
@@ -50,6 +70,11 @@
       "pageStart": 35,
       "pageEnd": 37
     },
+    "en": {
+      "title": "Request to Stay",
+      "pageStart": 23,
+      "pageEnd": 25
+    },
     "index": 6
   },
   {
@@ -57,6 +82,11 @@
       "title": "Visualisation des offrandes",
       "pageStart": 39,
       "pageEnd": 40
+    },
+    "en": {
+      "title": "Visualize The Offerings",
+      "pageStart": 26,
+      "pageEnd": 27
     },
     "index": 7
   },
@@ -66,6 +96,11 @@
       "pageStart": 41,
       "pageEnd": 44
     },
+    "en": {
+      "title": "The Invocation",
+      "pageStart": 28,
+      "pageEnd": 31
+    },
     "index": 8
   },
   {
@@ -73,6 +108,11 @@
       "title": "Offrande d'ablution",
       "pageStart": 45,
       "pageEnd": 48
+    },
+    "en": {
+      "title": "The Bath Offering",
+      "pageStart": 32,
+      "pageEnd": 34
     },
     "index": 9
   },
@@ -82,6 +122,11 @@
       "pageStart": 49,
       "pageEnd": 60
     },
+    "en": {
+      "title": "Branch of Prostration",
+      "pageStart": 35,
+      "pageEnd": 45
+    },
     "index": 10
   },
   {
@@ -89,6 +134,11 @@
       "title": "Branche de l'offrande",
       "pageStart": 61,
       "pageEnd": 70
+    },
+    "en": {
+      "title": "The Branch of Offerings",
+      "pageStart": 46,
+      "pageEnd": 54
     },
     "index": 11
   },
@@ -98,6 +148,11 @@
       "pageStart": 73,
       "pageEnd": 87
     },
+    "en": {
+      "title": "The Branch of Confession",
+      "pageStart": 55,
+      "pageEnd": 67
+    },
     "index": 12
   },
   {
@@ -105,6 +160,11 @@
       "title": "Branche de la réjouissance",
       "pageStart": 89,
       "pageEnd": 90
+    },
+    "en": {
+      "title": "Branch of Rejoicing",
+      "pageStart": 68,
+      "pageEnd": 69
     },
     "index": 13
   },
@@ -114,6 +174,11 @@
       "pageStart": 91,
       "pageEnd": 91
     },
+    "en": {
+      "title": "The Branch of Supplicating to turn the Wheel of Dharma",
+      "pageStart": 70,
+      "pageEnd": 70
+    },
     "index": 14
   },
   {
@@ -121,6 +186,11 @@
       "title": "Branche de la requête de ne pas entrer en nirvana",
       "pageStart": 93,
       "pageEnd": 93
+    },
+    "en": {
+      "title": "The Branch of Supplicating to Remain and not pass into Nirvana",
+      "pageStart": 71,
+      "pageEnd": 71
     },
     "index": 15
   },
@@ -130,6 +200,11 @@
       "pageStart": 95,
       "pageEnd": 99
     },
+    "en": {
+      "title": "The Branch of Dedication",
+      "pageStart": 72,
+      "pageEnd": 76
+    },
     "index": 16
   },
   {
@@ -137,6 +212,11 @@
       "title": "Voeu de bodhisattva",
       "pageStart": 101,
       "pageEnd": 103
+    },
+    "en": {
+      "title": "Bodhisattva Vow Prayer",
+      "pageStart": 77,
+      "pageEnd": 79
     },
     "index": 17
   },
@@ -146,6 +226,11 @@
       "pageStart": 105,
       "pageEnd": 109
     },
+    "en": {
+      "title": "Homage Prayers",
+      "pageStart": 77,
+      "pageEnd": 79
+    },
     "index": 18
   },
   {
@@ -153,6 +238,11 @@
       "title": "Résumé versifié de la centaine de vies passées du Bouddha",
       "pageStart": 111,
       "pageEnd": 114
+    },
+    "en": {
+      "title": "Homage Prayer to the Hundred Lives of Buddha Shakyamuni",
+      "pageStart": 84,
+      "pageEnd": 86
     },
     "index": 19
   },
@@ -162,6 +252,11 @@
       "pageStart": 115,
       "pageEnd": 118
     },
+    "en": {
+      "title": "Praise of the Twelve Deeds of Buddha Shakyamuni",
+      "pageStart": 87,
+      "pageEnd": 90
+    },
     "index": 20
   },
   {
@@ -169,6 +264,11 @@
       "title": "Louange à Manjushri 'Gang Lo Ma'",
       "pageStart": 119,
       "pageEnd": 126
+    },
+    "en": {
+      "title": "Praise of Noble Manjushri",
+      "pageStart": 91,
+      "pageEnd": 97
     },
     "index": 21
   },
@@ -178,6 +278,11 @@
       "pageStart": 127,
       "pageEnd": 129
     },
+    "en": {
+      "title": "Praise of Noble Avalokiteshvara",
+      "pageStart": 98,
+      "pageEnd": 100
+    },
     "index": 22
   },
   {
@@ -185,6 +290,11 @@
       "title": "Huit quatrains de louanges à Tara",
       "pageStart": 131,
       "pageEnd": 133
+    },
+    "en": {
+      "title": "The Eight Praises of Tara as spoken by Buddha Shakyamuni",
+      "pageStart": 101,
+      "pageEnd": 102
     },
     "index": 23
   },
@@ -194,6 +304,11 @@
       "pageStart": 135,
       "pageEnd": 145
     },
+    "en": {
+      "title": "Praise of the Sixteen Arhats",
+      "pageStart": 103,
+      "pageEnd": 111
+    },
     "index": 24
   },
   {
@@ -201,6 +316,11 @@
       "title": "Louange aux six Ornements de l'Inde et aux deux Suprêmes",
       "pageStart": 147,
       "pageEnd": 152
+    },
+    "en": {
+      "title": "Praise of the Six Ornaments and Two Noble Beings",
+      "pageStart": 112,
+      "pageEnd": 116
     },
     "index": 25
   },
@@ -210,6 +330,11 @@
       "pageStart": 153,
       "pageEnd": 158
     },
+    "en": {
+      "title": "The Prayer to the Line of Karmapas",
+      "pageStart": 117,
+      "pageEnd": 121
+    },
     "index": 26
   },
   {
@@ -217,6 +342,11 @@
       "title": "Choral des épithètes de Manjushri",
       "pageStart": 159,
       "pageEnd": 206
+    },
+    "en": {
+      "title": "Proclaiming the Names of Manjushri",
+      "pageStart": 122,
+      "pageEnd": 160
     },
     "index": 27
   },
@@ -226,6 +356,11 @@
       "pageStart": 207,
       "pageEnd": 213
     },
+    "en": {
+      "title": "The Essence of Prajna Sutra (Heart Sutra)",
+      "pageStart": 161,
+      "pageEnd": 167
+    },
     "index": 28
   },
   {
@@ -233,6 +368,11 @@
       "title": "Le soutra de la sagesse du moment de la mort",
       "pageStart": 215,
       "pageEnd": 218
+    },
+    "en": {
+      "title": "Noble Sutra of the Mahayana Wisdom at the Moment of Death",
+      "pageStart": 168,
+      "pageEnd": 170
     },
     "index": 29
   },
@@ -242,6 +382,11 @@
       "pageStart": 219,
       "pageEnd": 236
     },
+    "en": {
+      "title": "The King of Aspiration Prayer of Samanthabadra",
+      "pageStart": 171,
+      "pageEnd": 185
+    },
     "index": 30
   },
   {
@@ -249,6 +394,11 @@
       "title": "Prière d'aspiration de Maitreya",
       "pageStart": 237,
       "pageEnd": 244
+    },
+    "en": {
+      "title": "The Aspiration Prayer of Maitreya",
+      "pageStart": 186,
+      "pageEnd": 191
     },
     "index": 31
   },
@@ -258,6 +408,11 @@
       "pageStart": 245,
       "pageEnd": 260
     },
+    "en": {
+      "title": "Bodhicharyavatara Dedication Chapter",
+      "pageStart": 192,
+      "pageEnd": 204
+    },
     "index": 32
   },
   {
@@ -265,6 +420,11 @@
       "title": "Prière d'aspiration de Sukhavati commençant par 'Shé Dja'",
       "pageStart": 261,
       "pageEnd": 270
+    },
+    "en": {
+      "title": "Sukhavati Aspiration Prayer",
+      "pageStart": 205,
+      "pageEnd": 212
     },
     "index": 33
   },
@@ -274,6 +434,11 @@
       "pageStart": 271,
       "pageEnd": 278
     },
+    "en": {
+      "title": "Aspiration Prayer of Mahamudra",
+      "pageStart": 213,
+      "pageEnd": 221
+    },
     "index": 34
   },
   {
@@ -281,6 +446,11 @@
       "title": "Prière d'aspiration d'Akshobya",
       "pageStart": 279,
       "pageEnd": 283
+    },
+    "en": {
+      "title": "Aspiration Prayer of Buddha Akshobhya",
+      "pageStart": 222,
+      "pageEnd": 226
     },
     "index": 35
   },
@@ -290,6 +460,11 @@
       "pageStart": 285,
       "pageEnd": 303
     },
+    "en": {
+      "title": "Aspiration Prayer of Bardo",
+      "pageStart": 227,
+      "pageEnd": 242
+    },
     "index": 36
   },
   {
@@ -297,6 +472,11 @@
       "title": "Longue prière d'aspiration de Sukhavati composée par Tchakmé Rinpoché",
       "pageStart": 305,
       "pageEnd": 335
+    },
+    "en": {
+      "title": "Aspiration prayer of Sukhavati",
+      "pageStart": 243,
+      "pageEnd": 264
     },
     "index": 37
   },
@@ -306,6 +486,219 @@
       "pageStart": 337,
       "pageEnd": 343
     },
+    "en": {
+      "title": "Short Sukhavati Prayer",
+      "pageStart": 265,
+      "pageEnd": 268
+    },
     "index": 38
+  },
+  {
+    "fr": {
+      "title": "Souhaits d'Orgyen, commençant par 'Tchok Tchou Du Zhi'",
+      "pageStart": 345,
+      "pageEnd": 347
+    },
+    "en": {
+      "title": "Prayer for the Flourishing of Buddhadharma",
+      "pageStart": 269,
+      "pageEnd": 274
+    },
+    "index": 39
+  },
+  {
+    "fr": {
+      "title": "Courte prière d'aspiration compose par Mikyeu Dordjé",
+      "pageStart": 349,
+      "pageEnd": 351
+    },
+    "en": {
+      "title": "A Short Dedication Prayer",
+      "pageStart": 278,
+      "pageEnd": 279
+    },
+    "index": 40
+  },
+  {
+    "fr": {
+      "title": "Dharani de l'accomplissement des aspirations",
+      "pageStart": 353,
+      "pageEnd": 353
+    },
+    "en": {
+      "title": "The Dharani for the fulfillment of all aspirations",
+      "pageStart": 280,
+      "pageEnd": 280
+    },
+    "index": 41
+  },
+  {
+    "fr": {
+      "title": "Courte offrande de bali issue du vajrayana",
+      "pageStart": 355,
+      "pageEnd": 374
+    },
+    "en": {
+      "title": "Secret Inner Offering Prayer of Mahakala",
+      "pageStart": 281,
+      "pageEnd": 297
+    },
+    "index": 42
+  },
+  {
+    "fr": {
+      "title": "Requête d'indulgence",
+      "pageStart": 375,
+      "pageEnd": 376
+    },
+    "en": {
+      "title": "The Prayer of Repentance",
+      "pageStart": 298,
+      "pageEnd": 299
+    },
+    "index": 43
+  },
+  {
+    "fr": {
+      "title": "Requête de demeurer",
+      "pageStart": 377,
+      "pageEnd": 377
+    },
+    "en": {
+      "title": "Prayer Requesting Buddhas to Remain",
+      "pageStart": 300,
+      "pageEnd": 300
+    },
+    "index": 44
+  },
+  {
+    "fr": {
+      "title": "Souhaits de bon augure",
+      "pageStart": 379,
+      "pageEnd": 385
+    },
+    "en": {
+      "title": "Prayer of Auspiciousness as spoken by Buddha Shakyamuni",
+      "pageStart": 301,
+      "pageEnd": 306
+    },
+    "index": 45
+  },
+  {
+    "fr": {
+      "title": "Prière d'aspiration pour que fleurisse l'enseignement",
+      "pageStart": 387,
+      "pageEnd": 393
+    },
+    "en": {
+      "title": "Prayer for the Flourishing of Dharma",
+      "pageStart": 307,
+      "pageEnd": 312
+    },
+    "index": 46
+  },
+  {
+    "fr": {
+      "title": "Requête de demeurer définitivement dans les supports des corps, parole, esprit éveillés",
+      "pageStart": 395,
+      "pageEnd": 402
+    },
+    "en": {
+      "title": "Offering Prayer of Body, Speech and Mind to Guru",
+      "pageStart": 313,
+      "pageEnd": 319
+    },
+    "index": 47
+  },
+  {
+    "fr": {
+      "title": "Prière de longue vie du XVIIe Karmapa",
+      "pageStart": 405,
+      "pageEnd": 408
+    },
+    "en": {
+      "title": "Long Life Prayer of the 17th Karmapa",
+      "pageStart": 321,
+      "pageEnd": 323
+    },
+    "index": 48
+  },
+  {
+    "fr": {
+      "title": "Prière de prompt retour pour Shamar Rinpoché",
+      "pageStart": 409,
+      "pageEnd": 414
+    },
+    "en": {
+      "title": "Swift Rebirth Prayer",
+      "pageStart": 324,
+      "pageEnd": 326
+    },
+    "index": 49
+  },
+  {
+    "fr": {
+      "title": "Gourou Yoga du seigneur Milarépa et Offrande de tsok",
+      "pageStart": 415,
+      "pageEnd": 438
+    },
+    "en": {
+      "title": "Jetsun Milarepa' Guru Yoga and Tsok Offering",
+      "pageStart": 331,
+      "pageEnd": 356
+    },
+    "index": 50
+  },
+  {
+    "fr": {
+      "title": "La grande prière d'aspiration",
+      "pageStart": 439,
+      "pageEnd": 467
+    },
+    "en": {
+      "title": "The Great Aspiration Prayer",
+      "pageStart": 357,
+      "pageEnd": 381
+    },
+    "index": 51
+  },
+  {
+    "fr": {
+      "title": "Souhaits de bon augure commençant par 'dak gui'",
+      "pageStart": 469,
+      "pageEnd": 477
+    },
+    "en": {
+      "title": "Prayers for My Auspiciousness",
+      "pageStart": 382,
+      "pageEnd": 388
+    },
+    "index": 52
+  },
+  {
+    "fr": {
+      "title": "Quatrains sur les huit êtres nobles de bon augure",
+      "pageStart": 479,
+      "pageEnd": 482
+    },
+    "en": {
+      "title": "The Noble Eight Auspicious Prayers",
+      "pageStart": 389,
+      "pageEnd": 392
+    },
+    "index": 53
+  },
+  {
+    "fr": {
+      "title": "Prière (pour l'offrande) de lampes à beurre",
+      "pageStart": 483,
+      "pageEnd": 485
+    },
+    "en": {
+      "title": "Butter Lamp Offering",
+      "pageStart": 0,
+      "pageEnd": 0
+    },
+    "index": 54
   }
 ]

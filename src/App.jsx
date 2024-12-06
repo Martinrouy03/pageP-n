@@ -5,24 +5,33 @@ import Header from "./assets/components/Header";
 import SearchBar from "./assets/components/Searchbar";
 import data from "./assets/material/data.json";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faRepeat } from "@fortawesome/free-solid-svg-icons";
-library.add(faRepeat);
+import {
+  faRepeat,
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faRepeat, faChevronLeft, faChevronRight);
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // console.log(data);
 function App() {
-  const welcomeMessage =
-    "Welcome all! || French edition: 2022 || English edition:20XX";
+  const welcomeMessageFR = `Bienvenue aux Kagyu Mönlam 2024! Edition Française: 2022`;
+  const welcomeMessageEN =
+    "Welcome to Kagyu Mönlam 2024! English edition:   2023";
 
   const indexLast = data.length;
-  const pageMax = data[indexLast - 1].fr.pageEnd;
-  const [page, setPage] = useState(7);
-  const [message, setMessage] = useState(welcomeMessage);
+  const pageMin = data[0].fr.pageStart;
+  const pageMaxFR = data[indexLast - 1].fr.pageEnd;
+  const pageMaxEN = data[indexLast - 1].en.pageEnd;
+  const [pageFR, setPageFR] = useState(7);
+  const [pageEN, setPageEN] = useState(1);
+  const [messageFR, setMessageFR] = useState(welcomeMessageFR);
+  const [messageEN, setMessageEN] = useState(welcomeMessageEN);
   const [button, setButton] = useState(0);
   const [prayer, setPrayer] = useState(data[0]);
   const [storage, setStorage] = useState(
     JSON.parse(window.localStorage.getItem("options"))
-  ); // ,
+  );
   const [newOption, setNewOption] = useState("");
   const [optionsTxt, setOptionsTxt] = useState([]);
   const myOptionsFunc = () => {
@@ -39,21 +48,28 @@ function App() {
     setOptionsTxt(options);
   };
   const myButtonFunc = (buttonIndex) => {
-    let msg = "";
+    let msgFR = "";
+    let msgEN = "";
     if (buttonIndex === 1) {
-      msg = "🍵 TEA BREAK 🍵";
+      msgFR = "🍵 PAUSE THE 🍵";
+      msgEN = " TEA BREAK ";
     } else if (buttonIndex === 2) {
-      msg = "📣 Local Announcements 📣";
+      msgFR = "📣 Annonces Locales 📣";
+      msgEN = " Local Announcements ";
     } else if (buttonIndex === 3) {
-      msg = "... Resuming in 10 minutes ...";
+      msgFR = "... Reprise dans 10 minutes ...";
+      msgEN = "... Resuming in 10 minutes ...";
     } else if (buttonIndex === 4) {
-      msg = "📜 Additional prayer (not in the book) 📜";
+      msgFR = "📜 Prière additionnelle (pas dans le livre) 📜";
+      msgEN = " Additional prayer (not in the book) ";
     }
-    if (message && button === buttonIndex) {
-      setMessage("");
+    if (messageFR && button === buttonIndex) {
+      setMessageFR("");
+      setMessageEN("");
       setButton(0);
     } else {
-      setMessage(msg);
+      setMessageFR(msgFR);
+      setMessageEN(msgEN);
       setButton(buttonIndex);
     }
   };
@@ -64,15 +80,26 @@ function App() {
     <>
       <Header />
       <main className="container">
-        {message ? (
+        {messageFR ? (
           <div className="display-container">
-            <p>{message}</p>
+            <p style={{ fontWeight: "bold" }}>{messageFR}</p>
+            <p style={{ fontStyle: "italic" }}>{messageEN}</p>
           </div>
         ) : (
-          <div className="display-container display-prayer">
-            <p>{prayer.fr.title}</p>
-            <div>
-              <span>p.{page}</span>
+          <div className="display-container">
+            <div className="display-prayer">
+              <p>{prayer.fr.title}</p>
+              <div>
+                <span>p.{pageFR}</span>
+              </div>
+            </div>
+            <div className="display-prayer">
+              <p style={{ fontStyle: "italic", fontWeight: "unset" }}>
+                {prayer.en.title}
+              </p>
+              <div style={{ fontStyle: "italic", fontWeight: "unset" }}>
+                <span>~ p.{Math.round(pageEN)}</span>
+              </div>
             </div>
           </div>
         )}
@@ -82,7 +109,8 @@ function App() {
             <div id="buttons">
               <button
                 onClick={() => {
-                  setMessage(welcomeMessage);
+                  setMessageFR(welcomeMessageFR);
+                  setMessageEN(welcomeMessageEN);
                   setButton(0);
                 }}
               >
@@ -90,23 +118,27 @@ function App() {
               </button>
               <button
                 onClick={() => {
-                  setMessage("");
+                  setMessageFR("");
+                  setMessageEN("");
                   setButton(0);
                   setPrayer(data[0]);
-                  setPage(7);
+                  setPageFR(7);
+                  setPageEN(1);
                 }}
               >
                 START
               </button>
               <button
                 onClick={() => {
-                  setMessage("");
+                  setMessageFR("");
+                  setMessageEN("");
                   setButton(0);
                   const SamantabhadraPrayer = data.find((p) =>
                     p.fr.title.includes("Samantabhadra")
                   );
                   setPrayer(SamantabhadraPrayer);
-                  setPage(SamantabhadraPrayer.fr.pageStart);
+                  setPageFR(SamantabhadraPrayer.fr.pageStart);
+                  setPageEN(SamantabhadraPrayer.en.pageStart);
                 }}
               >
                 Samantabhadra Prayer
@@ -149,10 +181,9 @@ function App() {
             <div className="additional">
               <h4>Select a text to display:</h4>
               <select
-                // style={{ height: "25px" }}
                 onChange={(event) => {
                   setButton(0);
-                  setMessage(event.target.value);
+                  setMessageFR(event.target.value);
                 }}
                 name=""
                 id=""
@@ -163,41 +194,65 @@ function App() {
             <SearchBar
               prayer={prayer}
               setPrayer={setPrayer}
-              setPage={setPage}
-              setMessage={setMessage}
+              setPageFR={setPageFR}
+              setMessage={setMessageFR}
               setButton={setButton}
             />
           </div>
           <div className="right-panel">
             <div className="page-control">
+              <FontAwesomeIcon
+                icon="fa-solid fa-chevron-left"
+                size="lg"
+                style={{ color: "#621e06" }}
+                onClick={() => {
+                  const previousPrayer = data.find(
+                    (p) => p.index === prayer.index - 1
+                  );
+                  if (previousPrayer) {
+                    setPrayer(previousPrayer);
+                    setPageFR(previousPrayer.fr.pageStart);
+                    setPageEN(previousPrayer.en.pageStart);
+                  }
+                }}
+              />
               <button
                 onClick={() => {
-                  setMessage("");
+                  setMessageFR("");
+                  setMessageEN("");
                   setButton(0);
-                  if (page > 1) {
-                    setPage(Number(page) - 1);
+                  if (pageFR > pageMin) {
+                    setPageFR(Number(pageFR) - 1);
+                    setPageEN(
+                      prayer.en.pageStart -
+                        ((pageFR - prayer.fr.pageStart) *
+                          (prayer.en.pageEnd - prayer.en.pageStart)) /
+                          (prayer.fr.pageEnd - prayer.fr.pageStart)
+                    );
                   }
-                  if (page === prayer.fr.pageStart && prayer.index > 1) {
+                  if (pageFR === prayer.fr.pageStart && prayer.index > 1) {
                     const previousPrayer = data.find(
                       (p) => p.index === prayer.index - 1
                     );
                     setPrayer(previousPrayer);
-                    setPage(previousPrayer.fr.pageEnd);
+                    setPageFR(previousPrayer.fr.pageEnd);
+                    setPageEN(previousPrayer.en.pageEnd);
                   }
                 }}
               >
                 -
               </button>
               <input
-                value={page}
+                value={pageFR}
                 type="text"
                 placeholder="Go to page:"
                 onChange={(event) => {
-                  setMessage("");
+                  setMessageFR("");
+                  setMessageEN("");
                   setButton(0);
 
-                  if (event.target.value < pageMax) {
-                    setPage(event.target.value);
+                  if (event.target.value < pageMaxFR) {
+                    setPageFR(event.target.value);
                     const pp = data.find(
                       (p) => p.fr.pageEnd > event.target.value
                     );
@@ -205,38 +260,70 @@ function App() {
                       setPrayer(pp);
                     }
                   } else {
-                    setPage(pageMax);
+                    setPageFR(pageMaxFR);
+                    setPageEN(pageMaxEN);
                     setPrayer(data[indexLast - 1]);
                   }
                 }}
               />
               <button
                 onClick={() => {
-                  setMessage("");
+                  setMessageFR("");
+                  setMessageEN("");
                   setButton(0);
 
-                  if (Number(page) < pageMax) {
-                    setPage(Number(page) + 1);
+                  if (Number(pageFR) < pageMaxFR) {
+                    setPageFR(Number(pageFR) + 1);
+                    setPageEN(
+                      prayer.en.pageStart +
+                        ((pageFR - prayer.fr.pageStart) *
+                          (prayer.en.pageEnd - prayer.en.pageStart)) /
+                          (prayer.fr.pageEnd - prayer.fr.pageStart)
+                    );
                   } else {
-                    setPage(pageMax);
+                    setPageFR(pageMaxFR);
+                    setPageEN(pageMaxEN);
                   }
-                  if (page === prayer.fr.pageEnd && prayer.index < 38) {
+                  if (
+                    pageFR === prayer.fr.pageEnd &&
+                    prayer.index < indexLast
+                  ) {
                     const nextPrayer = data.find(
                       (p) => p.index === prayer.index + 1
                     );
                     setPrayer(nextPrayer);
-                    setPage(nextPrayer.fr.pageStart);
+                    setPageFR(nextPrayer.fr.pageStart);
+                    setPageEN(nextPrayer.en.pageStart);
                   }
                 }}
               >
                 +
               </button>
+              <FontAwesomeIcon
+                icon="fa-solid fa-chevron-right"
+                onClick={() => {
+                  setMessageFR("");
+                  setMessageEN("");
+                  setButton(0);
+                  const nextPrayer = data.find(
+                    (p) => p.index === prayer.index + 1
+                  );
+                  if (nextPrayer) {
+                    setPrayer(nextPrayer);
+                    setPageFR(nextPrayer.fr.pageStart);
+                    setPageEN(nextPrayer.en.pageStart);
+                  }
+                }}
+                size="lg"
+                style={{ color: "#621e06" }}
+              />
             </div>
             <div className="repeat">
               <FontAwesomeIcon icon="fa-solid fa-repeat" />
               <button
                 onClick={() => {
-                  setPage(prayer.fr.pageStart);
+                  setPageFR(prayer.fr.pageStart);
+                  setPageEN(prayer.en.pageStart);
                 }}
               >
                 Repeat
