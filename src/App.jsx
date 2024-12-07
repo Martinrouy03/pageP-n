@@ -98,7 +98,7 @@ function App() {
                 {prayer.en.title}
               </p>
               <div style={{ fontStyle: "italic", fontWeight: "unset" }}>
-                <span>~ p.{Math.round(pageEN)}</span>
+                <span>~ p.{pageEN}</span>
               </div>
             </div>
           </div>
@@ -224,10 +224,12 @@ function App() {
                   if (pageFR > pageMin) {
                     setPageFR(Number(pageFR) - 1);
                     setPageEN(
-                      prayer.en.pageStart -
-                        ((pageFR - prayer.fr.pageStart) *
-                          (prayer.en.pageEnd - prayer.en.pageStart)) /
-                          (prayer.fr.pageEnd - prayer.fr.pageStart)
+                      prayer.en.pageEnd -
+                        Math.ceil(
+                          (Math.abs(pageFR - prayer.fr.pageEnd) *
+                            (prayer.en.pageEnd - prayer.en.pageStart)) /
+                            (prayer.fr.pageEnd - prayer.fr.pageStart)
+                        )
                     );
                   }
                   if (pageFR === prayer.fr.pageStart && prayer.index > 1) {
@@ -276,9 +278,11 @@ function App() {
                     setPageFR(Number(pageFR) + 1);
                     setPageEN(
                       prayer.en.pageStart +
-                        ((pageFR - prayer.fr.pageStart) *
-                          (prayer.en.pageEnd - prayer.en.pageStart)) /
-                          (prayer.fr.pageEnd - prayer.fr.pageStart)
+                        Math.floor(
+                          ((pageFR - prayer.fr.pageStart) *
+                            (prayer.en.pageEnd - prayer.en.pageStart)) /
+                            (prayer.fr.pageEnd - prayer.fr.pageStart)
+                        )
                     );
                   } else {
                     setPageFR(pageMaxFR);
