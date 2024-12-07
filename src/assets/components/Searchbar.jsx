@@ -2,22 +2,31 @@ import { useState } from "react";
 import data from "../../assets/material/data.json";
 import "../../App.scss";
 
-const SearchBar = ({ setPrayer, setPage, setMessage, setButton }) => {
+const SearchBar = ({
+  setPrayer,
+  setPageFR,
+  setPageEN,
+  setMessageFR,
+  setMessageEN,
+  setButton,
+}) => {
   const [suggestions, setSuggestions] = useState("");
   const handleChange = (event) => {
     let sugg = [];
     setTxt(event.target.value);
 
     data.map((prayer) => {
-      if (prayer.fr.title.toLowerCase().search(txt) > -1) {
+      if (prayer.fr.title.toLowerCase().search(event.target.value) > -1) {
         sugg.push(
           <p
             onClick={() => {
               setPrayer(prayer);
-              setPage(prayer.fr.pageStart);
+              setPageFR(prayer.fr.pageStart);
+              setPageEN(prayer.en.pageStart);
               setTxt(prayer.fr.title);
               setSuggestions("");
-              setMessage("");
+              setMessageFR("");
+              setMessageEN("");
               setButton(0);
             }}
           >

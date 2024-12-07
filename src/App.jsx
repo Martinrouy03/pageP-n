@@ -51,13 +51,13 @@ function App() {
     let msgFR = "";
     let msgEN = "";
     if (buttonIndex === 1) {
-      msgFR = "🍵 PAUSE THE 🍵";
+      msgFR = "🍵 PAUSE THÉ 🍵";
       msgEN = " TEA BREAK ";
     } else if (buttonIndex === 2) {
       msgFR = "📣 Annonces Locales 📣";
       msgEN = " Local Announcements ";
     } else if (buttonIndex === 3) {
-      msgFR = "... Reprise dans 10 minutes ...";
+      msgFR = " 🧘🏼... Reprise dans 10 minutes ...🧘🏻‍♀️";
       msgEN = "... Resuming in 10 minutes ...";
     } else if (buttonIndex === 4) {
       msgFR = "📜 Prière additionnelle (pas dans le livre) 📜";
@@ -195,7 +195,9 @@ function App() {
               prayer={prayer}
               setPrayer={setPrayer}
               setPageFR={setPageFR}
-              setMessage={setMessageFR}
+              setPageEN={setPageEN}
+              setMessageFR={setMessageFR}
+              setMessageEN={setMessageEN}
               setButton={setButton}
             />
           </div>

@@ -7,6 +7,7 @@ body {
   box-sizing: border-box;
   font-family: "roboto-slab";
 }
+
 input,
 button {
   font-family: "roboto-slab";
@@ -14,6 +15,7 @@ button {
 .container {
   width: 1200px;
   margin: 0 auto;
+  // height: 100vh;
 }
 header {
   padding: 20px 0;
@@ -147,6 +149,8 @@ main {
       gap: 3px;
       padding: 10px 5px;
       border-radius: 0 0 10px 10px;
+      height: 150px;
+      overflow-y: scroll;
     }
   }
   .right-panel {
