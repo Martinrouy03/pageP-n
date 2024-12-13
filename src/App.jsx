@@ -32,7 +32,8 @@ function App() {
   const [storage, setStorage] = useState(
     JSON.parse(window.localStorage.getItem("options"))
   );
-  const [newOption, setNewOption] = useState("");
+  const [newOptionFR, setNewOptionFR] = useState("");
+  const [newOptionEN, setNewOptionEN] = useState("");
   const [optionsTxt, setOptionsTxt] = useState([]);
   const myOptionsFunc = () => {
     const options = [];
@@ -82,8 +83,18 @@ function App() {
       <main className="container">
         {messageFR ? (
           <div className="display-container">
-            <p style={{ fontWeight: "bold" }}>{messageFR}</p>
-            <p style={{ fontStyle: "italic" }}>{messageEN}</p>
+            <div
+              className="display-prayer"
+              style={{ fontWeight: "bold", justifyContent: "center" }}
+            >
+              {messageFR}
+            </div>
+            <div
+              className="display-prayer"
+              style={{ fontStyle: "italic", justifyContent: "center" }}
+            >
+              {messageEN}
+            </div>
           </div>
         ) : (
           <div className="display-container">
@@ -151,14 +162,14 @@ function App() {
                 event.preventDefault();
                 if (storage) {
                   const newStorage = [...storage];
-                  newStorage.push(newOption);
+                  newStorage.push([newOptionFR, newOptionEN]);
                   setStorage(newStorage);
                   window.localStorage.setItem(
                     "options",
                     JSON.stringify(newStorage)
                   );
                 } else {
-                  const initOption = [newOption];
+                  const initOption = [newOptionFR, newOptionEN];
                   window.localStorage.setItem(
                     "options",
                     JSON.stringify(initOption)
@@ -169,11 +180,20 @@ function App() {
             >
               <input
                 type="text"
-                placeholder="Add a text to display"
-                value={newOption}
-                onChange={(event) => setNewOption(event.target.value)}
+                placeholder="French"
+                value={newOptionFR}
+                onChange={(event) => setNewOptionFR(event.target.value)}
                 onClick={() => {
-                  setNewOption("");
+                  setNewOptionFR("");
+                }}
+              />
+              <input
+                type="text"
+                placeholder="English"
+                value={newOptionEN}
+                onChange={(event) => setNewOptionEN(event.target.value)}
+                onClick={() => {
+                  setNewOptionEN("");
                 }}
               />
               <button>Add text</button>
@@ -181,9 +201,11 @@ function App() {
             <div className="additional">
               <h4>Select a text to display:</h4>
               <select
-                onChange={(event) => {
+                onClick={(event) => {
+                  console.log(event.target.value);
                   setButton(0);
-                  setMessageFR(event.target.value);
+                  setMessageFR(event.target.value.split(",")[0]);
+                  setMessageEN(event.target.value.split(",")[1]);
                 }}
                 name=""
                 id=""
@@ -262,6 +284,7 @@ function App() {
                     );
                     if (pp) {
                       setPrayer(pp);
+                      setPageEN(pp.en.pageStart);
                     }
                   } else {
                     setPageFR(pageMaxFR);
